@@ -1,5 +1,6 @@
 import requests
 import os
+import json
 from dotenv import load_dotenv
 
 load_dotenv()
@@ -16,7 +17,7 @@ def send_telegram_notification(record: dict) -> bool:
 
     message = (
         f"<b>Highest Population Country Updated</b>\n"
-        f"{record}\n"
+        f"{json.dumps(record, indent=2)}\n"
     )
 
     payload = {
