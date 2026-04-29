@@ -1,19 +1,16 @@
 import openpyxl
 import os
-import
 
 OUTPUT_FOLDER = "output"
 EXCEL_FILE = os.path.join(OUTPUT_FOLDER, "country_population.xlsx")
 
 # Updated header for country info
 HEADER = [
-    "ID",
-    "Country",
-    "Capital",
-    "Region",
-    "Subregion",
-    "Population",
-    "CREATED_AT"
+    "name",
+    "capital",
+    "region",
+    "subregion",
+    "population",
 ]
 
 def save_to_excel(data: dict) -> str:
@@ -61,7 +58,7 @@ def save_to_excel(data: dict) -> str:
 if __name__ == "__main__":
     from g3_scrape import scrape_data     # Update import as needed
 
-    data = scrape_data("Asia")               # Example usage; update as needed
-    print(data)
-    file_path = save_to_excel(data)
+    asian_countries = get_asian_countries()               # Example usage; update as needed
+    print(asian_countries)
+    file_path = save_to_excel(asian_countries)
     print("Excel file saved to:", file_path)
