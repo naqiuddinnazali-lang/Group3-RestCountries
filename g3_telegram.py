@@ -13,10 +13,11 @@ TELEGRAM_API_URL = f"https://api.telegram.org/bot{TELEGRAM_BOT_TOKEN}/sendMessag
 def send_telegram_notification(record: dict) -> bool:
     #name    = record["data"]
     #record_id  = record["id"]
-    #created_at = record["created_at"]
+    created_at = record["created_at"]
 
     message = (
         f"<b>Highest Population Country Updated</b>\n"
+        f"<b>Created at: {created_at}\n"
         f"{json.dumps(record, indent=2)}\n"
     )
 
