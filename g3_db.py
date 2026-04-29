@@ -210,15 +210,11 @@ def save_db(data):
 
 if __name__ == "__main__":
 
-    from g3_condition import get_top_10_highest_population_countries
-
-   
+    from g3_condition import get_top_10_countries
 
     int_db()
 
-
-
-    data = get_top_10_highest_population_countries()
+    data = get_top_10_countries()
 
     record = save_db(data)
 
