@@ -17,7 +17,6 @@ def send_telegram_notification(record: dict) -> bool:
 
     message = (
         f"<b>Highest Population Country Updated</b>\n"
-        f"<b>Created at: {population["created_at"]}\n"
         f"{json.dumps(record, indent=2)}\n"
     )
 
