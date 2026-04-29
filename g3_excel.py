@@ -1,5 +1,6 @@
 import openpyxl
 import os
+import
 
 OUTPUT_FOLDER = "output"
 EXCEL_FILE = os.path.join(OUTPUT_FOLDER, "country_population.xlsx")
@@ -45,12 +46,12 @@ def save_to_excel(data: dict) -> str:
     # Match data to new header
     row = [
         next_id,
-        data.get("country", ""),        # Country Name
-        data.get("capital", ""),        # Capital City
-        data.get("region", ""),         # Region
-        data.get("subregion", ""),      # Subregion
-        data.get("population", 0),      # Population
-        data.get("created_at", "")      # Timestamp
+        data["name"],        # Country Name
+        data["capital"],        # Capital City
+        data["population"],      # Population
+        data["region"],         # Region
+        data["subregion"],      # Subregion
+        
     ]
 
     ws.append(row)
