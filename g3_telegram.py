@@ -11,13 +11,13 @@ TELEGRAM_CHAT_ID   = os.getenv("TELEGRAM_CHAT_ID")
 TELEGRAM_API_URL = f"https://api.telegram.org/bot{TELEGRAM_BOT_TOKEN}/sendMessage"
 
 def send_telegram_notification(record: dict) -> bool:
-    #name    = record["data"]
+    population    = record["data"]
     #record_id  = record["id"]
     created_at = record["created_at"]
 
     message = (
         f"<b>Highest Population Country Updated</b>\n"
-        f"<b>Created at: {created_at}\n"
+        f"<b>Created at: {population["created_at"]}\n"
         f"{json.dumps(record, indent=2)}\n"
     )
 
