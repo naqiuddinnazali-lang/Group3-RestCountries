@@ -4,6 +4,7 @@ from g3_scrape import get_asian_countries
 from g3_excel import save_to_excel
 from g3_condition import get_top_10_countries
 from g3_db import int_db, save_db
+from g3_telegram import send_telegram_notification
 
 def run_pipeline():
     countries = get_asian_countries()
@@ -17,7 +18,8 @@ def run_pipeline():
     record = save_db(data)
     print(json.dumps(record, indent=2))
 
-    
+    send_telegram_notification(record)
+
 
 if __name__ == "__main__":
     run_pipeline()
