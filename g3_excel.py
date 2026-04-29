@@ -45,12 +45,12 @@ def save_to_excel(data: dict) -> str:
     # Match data to new header
     row = [
         next_id,
-        data.get("country", ""),        # Country Name
-        data.get("capital", ""),        # Capital City
-        data.get("region", ""),         # Region
-        data.get("subregion", ""),      # Subregion
-        data.get("population", 0),      # Population
-        data.get("created_at", "")      # Timestamp
+        data["name"],        # Country Name
+        data["capital"],        # Capital City
+        data["region"],         # Region
+        data["subregion"],      # Subregion
+        data["population"],      # Population
+        data["created_at"]      # Timestamp
     ]
 
     ws.append(row)
