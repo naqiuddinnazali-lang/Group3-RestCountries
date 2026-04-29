@@ -6,11 +6,12 @@ EXCEL_FILE = os.path.join(OUTPUT_FOLDER, "country_population.xlsx")
 
 # Updated header for country info
 HEADER = [
+    "id",
     "name",
     "capital",
+    "population",
     "region",
     "subregion",
-    "population",
 ]
 
 def save_to_excel(data: dict) -> str:
@@ -56,7 +57,7 @@ def save_to_excel(data: dict) -> str:
     return EXCEL_FILE
 
 if __name__ == "__main__":
-    from g3_scrape import scrape_data     # Update import as needed
+    from g3_scrape import get_asian_countries     # Update import as needed
 
     asian_countries = get_asian_countries()               # Example usage; update as needed
     print(asian_countries)
